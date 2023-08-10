@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>REACT CDN</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const App = () => {
+            const title = 'Welcome to my website'
+            const subtitle = 'This is websit to learning react'
+            const address = 'https://youtube.com'
+            const handleClick = (e) => {
+                console.log('You clicked me 👌', title)
+                console.log(e);
+            }
+            return(
+                <div className="app">
+                    <h1>{ title.toUpperCase() }</h1>
+                    <h3>{ subtitle }</h3>
+                    <p>Today's date is :  {new Date().toTimeString()}</p>
+                    <p>Random Number: {Math.floor(Math.random()*100)}</p>
+                    <a href = {address}>My You Tube channel</a><br></br><br></br>
+                    <button onClick={handleClick}>Click Me</button><br></br><br></br>
+                    <button onClick={() => {
+                        console.log(1);
+                    }}>Click Me</button><br></br><br></br>
+                </div>
+                          )
+        };
+        const main = ReactDOM.createRoot(document.getElementById('root'))
+        main.render(<App/>)
+    </script>
+</body>
+</html>
